@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Root cause all the things</title>
+<meta name="description" content="Tech blog">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  <meta name="generator" content="Hugo 0.57.2" />
+  <meta itemprop="name" content="Root cause all the things">
+<meta itemprop="description" content="">
+
+
+  <meta property="og:title" content="Root cause all the things" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://olka.github.io/" />
+
+<meta property="og:updated_time" content="2019-08-18T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Root cause all the things"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@example"/>
+
+  
+
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/zenburn.min.css">
+  
+    
+      <link rel="stylesheet" href="/css/normalize.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+      
+      
+      <link rel="stylesheet" href="/css/main.min.f4e119ef72c973f79de75e3c08115db70ee18e750daa07e1e15db6dafffdffaf.css" integrity="sha256-9OEZ73LJc/ed5148CBFdtw7hjnUNqgfh4V222v/9/68=">
+      <link rel="stylesheet" href="/css/add-on.css">
+    
+  
+  
+  
+  
+  
+</head>
+
+  <body>
+    
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/">
+        
+          RCAtT
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu">
+      
+        <a href="/" class="link"><i class="fas fa-home">&nbsp;</i>Home</a>
+      
+        <a href="/about/" class="link"><i class="far fa-id-card">&nbsp;</i>About</a>
+      
+        <a href="/blog/" class="link"><i class="far fa-newspaper">&nbsp;</i>Blog</a>
+      
+        <a href="/categories/" class="link"><i class="fas fa-sitemap">&nbsp;</i>Categories</a>
+      
+        <a href="/contact/" class="link"><i class="far fa-envelope">&nbsp;</i>Contact</a>
+      
+      
+      
+
+    </menu>
+    
+
+    
+    
+    <a href="#site-nav" class="nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro">
+  <a href="/"><img src="/img/photo.jpg" class="circle" width="100" alt="" /></a>
+  <header>
+    <h1>Root cause all the things</h1>
+  </header>
+  <main>
+    <p>Tech blog</p>
+  </main>
+  
+</section>
+
+      <main id="site-main">
+        
+        
+          <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="/blog/java_random_generators_perf/">Performance characteristics of Random, ThreadLocalRandom and SplittableRandom</a></h2>
+    
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2019-08-18 00:00:00 &#43;0000 UTC">
+      August 18, 2019
+    </time>
+    <span class="author">Alex Kachur</span>
+    
+        <p>3 minute read</p>
+    
+  </div>
+</header>
+
+  
+
+  
+  <p>Recently I&rsquo;ve got interesting task related to random data generation and writing this data on disk as fast as possible using Java.
+Unfortunately performance requirements were really tight: in peak application should support writing at ~3 Gb/s.
+Which means that it should generate random data at really high pace, encode it to proper charset and finally write to disk.
+That&rsquo;s pretty much an exposition and motivation behind following measurements and why it was so important to dig in.</p>
+  <footer>
+    <a href="/blog/java_random_generators_perf/" class="button big">Read more</a>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="https://olka.github.io/categories/performance">Performance</a></li>
+          
+            
+            <li><a class="article-category-link" href="https://olka.github.io/categories/java">Java</a></li>
+          
+            
+            <li><a class="article-category-link" href="https://olka.github.io/categories/random">Random</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    <li class="tags">
+      <ul>
+        <li>None</li>
+      </ul>
+    </li>
+  
+</ul>
+
+  </footer>
+</article>
+
+        
+          <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="/blog/pi_tinkerboard_perf/">Raspberry Pi vs Tinker Board: node.js performance</a></h2>
+    
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2018-12-30 00:00:00 &#43;0000 UTC">
+      December 30, 2018
+    </time>
+    <span class="author">Alex Kachur</span>
+    
+        <p>3 minute read</p>
+    
+  </div>
+</header>
+
+  
+
+  
+  <p>Recently I&rsquo;ve bought both Raspberry Pi and Tinker Board to experiment with microservices performance, cause in the cloud you never know how busy your host is.
+As an application under test I&rsquo;ve found just perfect match - <a href="https://github.com/cloudacademy/aws-xray-microservices-calc">Dockerised Microservices Calculator</a> by <a href="https://github.com/jeremycook123">Jeremy Cook</a> written on node.js. It&rsquo;s dockerised microservices calculator that has been designed to evaluate simple and complex mathematical expressions with any valid user provided expression using the order of operations&hellip;</p>
+  <footer>
+    <a href="/blog/pi_tinkerboard_perf/" class="button big">Read more</a>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="https://olka.github.io/categories/performance">Performance</a></li>
+          
+            
+            <li><a class="article-category-link" href="https://olka.github.io/categories/node.js">node.js</a></li>
+          
+            
+            <li><a class="article-category-link" href="https://olka.github.io/categories/raspberry-pi">Raspberry Pi</a></li>
+          
+            
+            <li><a class="article-category-link" href="https://olka.github.io/categories/tinker-board">Tinker Board</a></li>
+          
+            
+            <li><a class="article-category-link" href="https://olka.github.io/categories/gatling">gatling</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    <li class="tags">
+      <ul>
+        <li>None</li>
+      </ul>
+    </li>
+  
+</ul>
+
+  </footer>
+</article>
+
+        
+        
+<div class="pagination">
+  
+    <a href="#" class="disabled button big previous"><i class="fas fa-angle-left"></i></a>
+  
+  
+    <a href="#" class="disabled button big next"><i class="fas fa-angle-right"></i></a>
+  
+</div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent posts</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h1><a href="/blog/java_random_generators_perf/">Performance characteristics of Random, ThreadLocalRandom and SplittableRandom</a></h1>
+          <time class="published" datetime="">August 18, 2019</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h1><a href="/blog/pi_tinkerboard_perf/">Raspberry Pi vs Tinker Board: node.js performance</a></h1>
+          <time class="published" datetime="">December 30, 2018</time>
+        </header>
+      </article>
+      
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="/categories/performance/">performance<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/gatling/">gatling<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/java/">java<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/node.js/">node.js<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/random/">random<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/raspberry-pi/">raspberry-pi<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/tinker-board/">tinker-board<span class="count">1</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  <section id="mini-bio">
+    <header>
+      <h1>About</h1>
+    </header>
+    <p>test</p>
+    <footer>
+      <a href="/about" class="button">Learn More</a>
+    </footer>
+  </section>
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a></li>
+
+
+        <li><a href="//github.com/pacollins/hugo-future-imperfect-slim" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/example" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/example" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:example" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    
+      &copy; 2019
+      
+        Root cause all the things
+      
+    . <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.57.2' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/html.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/js.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/java.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/bash.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+  <script src=/js/util.js></script>
+  <script src=/js/main.js></script>
+  <script src=/js/add-on.js></script>
+  
+
+
+
+    </div>
+  </body>
+</html>
